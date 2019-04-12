@@ -1,0 +1,34 @@
+PLugin Installation     : Tmux Plugin Manager
+      Install script    : set -g @plugin 'url'
+            Example     : (https://github.com/tmux-plugins/tmux-resurrect -> set -g @plugin 'tmux-plugins/tmux-resurrect')
+Plugins:
+    1. copycat
+        Desc: It helps to find out strings and filters
+        Code: https://github.com/tmux-plugins/tmux-copycat
+        Commands: <prefix> +
+                    C-f   : Search file names
+                    C-d   : Digits
+                    C-u   : URLs
+    2. tmux-yank
+        Desc: It helps to yank text to clipboard
+        Code: https://github.com/tmux-plugins/tmux-yank
+        Commands: <prefix> +
+                    y     : yank to clipboard
+                    C-y   : paste immidietly on command prompt without adding to clipboard
+    3. tmux-resurrect
+        Desc: Saves session from restarting server, best useful for maintaining local ones (which don't have script)
+        Code: https://github.com/tmux-plugins/tmux-resurrect
+        Commands: <prefix> +
+                    C-s   : Save stream
+                    C-r   : Reload stream
+    4. tpm
+        Desc: Tmux Plugin Manager
+        Code: https://github.com/tmux-plugins/tpm
+        Commands: <prefix> +
+                    C-i   : Install plugin
+                    C-u   : Update plugin
+        Extra:
+            set -g @plugin //in tmux script
+            run -b '~/.tmux/plugins/tpm/tpm' //Initializing tpm plugin manager
+            tmux source ~/.tmux.conf //for reloading tmux configuration if it's already running
+
