@@ -176,6 +176,7 @@ Plug 'kien/ctrlp.vim' "Helps: file search path
 Plug 'joonty/vim-sauce' "Helps: multiple file management and projects
 Plug 'vim-syntastic/syntastic' "Helps: Syntax checking
 Plug 'neomake/neomake' "Helps: mulple programs running asynchronously (make cmd)
+Plug 'tmux-plugins/vim-tmux' "Helps: syntax highlighting for .tmux.conf
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

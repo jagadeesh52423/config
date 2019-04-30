@@ -127,3 +127,8 @@ export GOPATH=/home/jagadeesh/Work/GoProjects
 export GOROOT="/usr/src/go"
 # export GOPATH="/home/exotel/projects/go"
 export PATH=$PATH:$GOROOT/bin
+tm() { tmux new -s "$1" ;}
+ta() { tmux attach -t "$1" ;}
+tl() { tmux list-sessions; }
+VIMRUNTIME=/usr/bin
+EDITOR=/usr/bin/vim
