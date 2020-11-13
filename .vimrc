@@ -158,7 +158,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 set background=dark 
 "------------------------------------------------------------
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -168,20 +168,26 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:neomake_open_list = 2
 " ----------------------------------------------------------
-call plug#begin()
-Plug 'tpope/vim-sensible' "Helps: incsearch, backspace, listchars, scrolloff, autoreload, runtime! macros/matchit.vim
-Plug 'tpope/vim-fugitive' "Helps: Git management
-Plug 'joonty/myvim' "Helps: Someone's personal vim, tab management
-Plug 'kien/ctrlp.vim' "Helps: file search path
-Plug 'joonty/vim-sauce' "Helps: multiple file management and projects
-Plug 'vim-syntastic/syntastic' "Helps: Syntax checking
-Plug 'neomake/neomake' "Helps: mulple programs running asynchronously (make cmd)
-Plug 'tmux-plugins/vim-tmux' "Helps: syntax highlighting for .tmux.conf
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-call plug#end()
+set nocompatible
+filetype off
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'tpope/vim-sensible' "Helps: incsearch, backspace, listchars, scrolloff, autoreload, runtime! macros/matchit.vim
+Plugin 'tpope/vim-fugitive' "Helps: Git management
+Plugin 'joonty/myvim' "Helps: Someone's personal vim, tab management
+Plugin 'kien/ctrlp.vim' "Helps: file search path
+Plugin 'joonty/vim-sauce' "Helps: multiple file management and projects
+" Plugin 'vim-syntastic/syntastic' "Helps: Syntax checking
+Plugin 'neomake/neomake' "Helps: mulple programs running asynchronously (make cmd)
+Plugin 'tmux-plugins/vim-tmux' "Helps: syntax highlighting for .tmux.conf
+" Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" On-demand loading
+Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call vundle#end()
+
+" ----------------------------------------------------------
+"
 " When writing a buffer (no delay).
 call neomake#configure#automake('w')
 " When writing a buffer (no delay), and on normal mode changes (after
