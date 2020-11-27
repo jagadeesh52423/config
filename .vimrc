@@ -181,6 +181,9 @@ Plugin 'joonty/vim-sauce' "Helps: multiple file management and projects
 " Plugin 'vim-syntastic/syntastic' "Helps: Syntax checking
 Plugin 'neomake/neomake' "Helps: mulple programs running asynchronously (make cmd)
 Plugin 'tmux-plugins/vim-tmux' "Helps: syntax highlighting for .tmux.conf
+" Plugin 'danilo-augusto/vim-afterglow' " styling and colors 
+Plugin 'zxqfl/tabnine-vim' " Code autocompletion
+
 " Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " On-demand loading
 Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

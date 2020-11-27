@@ -115,20 +115,29 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export MY_PHP=/home/jagadeesh/work/src/github.com/jagadeesh52423/LearnPHP
-alias home_bastion='ssh -A unix-jagadeesh.p@10.0.5.5 -p 22000'
-alias bastion='ssh -A unix-jagadeesh.p@bastion.exotel.in -p 22000'
-alias connect-vpn='sudo openvpn --config  /home/jagadeesh/.ssh/jagadeesh.p.ovpn'
-export GOPATH=/home/jagadeesh/Work/GoProjects
-# export PATH=$PATH:/usr/local/go/bin
-
-
-#GOLANG
-export GOROOT="/usr/src/go"
-# export GOPATH="/home/exotel/projects/go"
-export PATH=$PATH:$GOROOT/bin
 tm() { tmux new -s "$1" ;}
 ta() { tmux attach -t "$1" ;}
 tl() { tmux list-sessions; }
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim
+source ~/.git_shortcuts
+
+PS1_DEBIAN_CHROOT='${debian_chroot:+($debian_chroot)}'
+PS1_TIME='\[\033[01;31m\]\t \[\033[01;32m\]'
+PS1_USERNAME='\[\e[1;36m\]\u\e[1;37m\]@\e[1;32m\]\h\[\033[00m\]'
+PS1_LOCATION='\[\033[01;32m\]\w\[\033[00m\]'
+parse_git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
+PS1_GIT=' \[\033[00;33m\]$(parse_git_branch)\[\033[00m\]\]'
+
+git_start () {
+PS1=$PS1_DEBIAN_CHROOT$PS1_TIME$PS1_LOCATION$PS1_GIT'\n\$ '
+}
+normal_use () {
+PS1="$PS1_DEBIAN_CHROOT$PS1_TIME$PS1_LOCATION\[\033[01;34m\]\$\[\033[00m\] "
+}
+normal_use
+PS2='\[\033[01;36m\]>'
+deeplearn () {
+    ssh -i ~/.ssh/gcloud-deeplearn ubuntu@35.193.86.63
+}
+
